@@ -5,7 +5,7 @@ void setup() {
 }
 
 void loop() {
-  val=analogRead(A0);
- Serial.println(A0);
+  int val=analogRead(A0);
+ Serial.println(val);
 
 }
