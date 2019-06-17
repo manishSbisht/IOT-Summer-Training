@@ -1,0 +1,18 @@
+****************************
+For program:
+- Install Blynk library
+- Go to: File>Examples>Blynk>BoardWifi>NodeMCU
+
+
+****************************
+IFTT applet settings:
+- IFTT takes "D0" in url, but it means GPIO-0 on the board. it ignores the "D" in front. And according to pinout diagram, GPIO-0 means D3 on the board.
+- Use same auth token in URL as sent by Blynk app, during project creation.
+
+
+****************************
+Blynk app settings:
+Create project, add new button, select GP0 as PIN. 
+Set button type to "Switch".
+Set 1 as ON & 0 as OFF.
+
