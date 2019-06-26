@@ -1,0 +1,80 @@
+[
+    {
+        "id": "4be288cd.f179a8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "61a40516.44f2fc",
+        "type": "rpi-gpio out",
+        "z": "4be288cd.f179a8",
+        "name": "LedPin",
+        "pin": "7",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 430,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "53d02b6d.4caae4",
+        "type": "inject",
+        "z": "4be288cd.f179a8",
+        "name": "InputButton",
+        "topic": "On",
+        "payload": "1",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 340,
+        "wires": [
+            [
+                "61a40516.44f2fc",
+                "1ac968a3.2924e7"
+            ]
+        ]
+    },
+    {
+        "id": "8726be9d.04ada",
+        "type": "inject",
+        "z": "4be288cd.f179a8",
+        "name": "Inputbtn",
+        "topic": "OFF",
+        "payload": "0",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 480,
+        "wires": [
+            [
+                "61a40516.44f2fc",
+                "1ac968a3.2924e7"
+            ]
+        ]
+    },
+    {
+        "id": "1ac968a3.2924e7",
+        "type": "debug",
+        "z": "4be288cd.f179a8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 430,
+        "y": 380,
+        "wires": []
+    }
+]

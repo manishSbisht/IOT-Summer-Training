@@ -1,3 +1,6 @@
+#TYPE THESE LINES IN TERMINAL ONE BY ONE
+#DONT RUN THIS FILE
+
 import RPi.GPIO as GPIO
 import Adafruit_DHT as dht
 
