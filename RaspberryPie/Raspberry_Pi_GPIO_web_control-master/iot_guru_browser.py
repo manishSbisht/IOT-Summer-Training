@@ -1,0 +1,22 @@
+import RPi.GPIO as GPIO
+import time
+#import urllib.request
+import urllib2
+#Initialize Raspberry PI GPIO
+GPIO.setmode(GPIO.BOARD)
+#GPIO23
+GPIO.setup(16, GPIO.OUT)
+while True:
+    #htmlfile = urllib.request.urlopen("https://iotswitchctrl.000webhostapp.com/buttonStatus.php")
+    htmlfile = urllib2.urlopen("https://iotswitchctrl.000webhostapp.com/buttonStatus.php")
+    time.sleep(2)
+    htmltext = htmlfile.read()
+    print(htmltext)
+    if (htmltext == b'S1ON'):
+        GPIO.output(16, True)
+        print ("LED ON")
+        time.sleep(1)
+    if (htmltext == b'S1OFF'):
+        GPIO.output(16, False)
+        print ("LED OFF")
+        time.sleep(1)
