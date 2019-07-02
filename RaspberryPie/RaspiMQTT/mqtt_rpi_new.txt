@@ -1,0 +1,43 @@
+cd ~
+sudo wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
+sudo apt-key add mosquitto-repo.gpg.key
+cd /etc/apt/sources.list.d/
+
+sudo wget http://repo.mosquitto.org/debian/mosquitto-stretch.list
+    sudo wget http://repo.mosquitto.org/debian/mosquitto-wheezy.list       (optional)
+
+
+sudo apt-get update
+cd ~
+
+
+sudo wget http://security-cdn.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u11_armhf.deb
+
+sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u11_armhf.deb
+
+sudo wget http://ftp.nz.debian.org/debian/pool/main/libw/libwebsockets/libwebsockets3_1.2.2-1_armhf.deb
+
+sudo dpkg -i libwebsockets3_1.2.2-1_armhf.deb
+
+
+
+
+sudo apt-get install mosquitto
+      Note :-- $sudo apt-get install -f          (if got error during instalation)
+sudo apt-get install mosquitto
+sudo apt-get install mosquitto mosquitto-clients      `````
+
+
+
+
+sudo /etc/init.d/mosquitto start
+
+#Start Subscriber for topic_name "iot"
+$mosquitto_sub -d -t "iot"
+
+#Start Publisher for topic_name "iot" and send message:
+$mosquitto_pub -d -t "iot" -m "Hi, This is my msg..."          ---(-d : debug mode, -t : topic_name)
+
+
+#Stop mosquitto (MQTT broker) service
+$sudo /etc/init.d/mosquitto stop

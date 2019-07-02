@@ -1,0 +1,8 @@
+[Unit]
+Description=Raspberry Pi Internet Thing
+
+[Service]
+ExecStart=/usr/bin/python /home/pi/webpage2/demo1/webapp/main.py
+
+[Install]
+WantedBy=multi-user.target
