@@ -1,4 +1,4 @@
-# IOT-Summer-Training
+# IoT-Summer-Training
 Collection of programs written during IoT training course
 
 ## Structure
